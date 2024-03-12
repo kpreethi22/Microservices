@@ -31,20 +31,21 @@ eureka:
 
 management:
   health:
-    circuit-breaker:
+    circuitbreakers:
       enabled: true
   endpoints:
     web:
       exposure:
         include: health
+
   endpoint:
     health:
       show-details: always
 
 resilience4j:
-  circuit-breaker:
+  circuitbreaker:
     instances:
-      ratingHotelBreaker:
+      commentBreaker:
         registerHealthIndicator: true
         eventConsumerBufferSize: 10
         failureRateThreshold: 50

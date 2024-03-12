@@ -1,1 +1,8 @@
-url are in the respected controllers
+for AOP,Actuator and resilience
+stop comment server and use this url in browser or postman in get method
+http://localhost:8081/api/posts/{postId}/comments
+
+later
+
+http://localhost:8081/actuator/health     get method
+uget state of circuit breaker

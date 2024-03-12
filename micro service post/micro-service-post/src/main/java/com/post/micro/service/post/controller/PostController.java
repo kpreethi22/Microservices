@@ -34,15 +34,17 @@ public class PostController {
 return  new ResponseEntity<>(postDto,HttpStatus.OK);
     }
 
-    public ResponseEntity<PostDto> commentFallback(String postId,Exception ex){
+    public ResponseEntity<PostDto> commentFallback(String postId, Exception ex){
         System.out.println("fallback is executed because service is down:" +ex.getMessage());
+
         ex.printStackTrace();
+
         PostDto dto= new PostDto();
         dto.setPostId("1234");
         dto.setTitle("Service Down");
         dto.setContent("service down");
         dto.setDescription("service down");
 
-        return new ResponseEntity<>(dto,HttpStatus.BAD_REQUEST);
+        return new ResponseEntity<>(dto, HttpStatus.BAD_REQUEST);
     }
 }
